@@ -11,11 +11,17 @@ try:
     conversation_history = [
         {"role": "system", "content": "You are a helpful virtual health assistant that creates structured workout and diet plans for every day of the week. Provide a diet for seven days a week and a workout for the amount of days the user wants. Use the same format everytime"},
     ]
+    user_data={age: " ", gender: " ", weight:" ", height: " ", goal: " ",level:" ", diet: " ", supplements: " ", days:" "}
+    survey=["16","female","124","5 feet","lose weight", "beginner","vegan","no","5"]
+    for i=0, i< len(user_data), i+=1:
+        user_data[age]=survey[i];
+
     start=0
     while True:
         # Get user input
         if start==0:
           print("Hi I am a virtual health assistant. I can give you advice on your diet or workout routine.")
+          '''
           Age=input("Age: ")
           Gender=input("Gender: ")
           Goal=input("Goal: ")
@@ -25,6 +31,8 @@ try:
           foods=input("Favorite foods:")
           restrictions=input("Dietary restrictions: ")
           user_input = Age+" "+ Gender+" " +" "+" "+ Goal+" " +Height+" "+Weight+" They want to workout "+ DaysPerWeek+ " Their favorite foods are "+ foods+ "Thier dietary restrictions are "+ restrictions
+          '''
+         ## user_input="Here is information about user x. The order is age, height,"
           start=1
         else:
             user_input=input("Anything else? ") 
