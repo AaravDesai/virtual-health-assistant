@@ -9,13 +9,27 @@ openai.api_version = '2023-03-15-preview'
 try:
     # Initialize conversation history
     conversation_history = [
-        {"role": "system", "content": "You are a helpful virtual health assistant."},
+        {"role": "system", "content": "You are a helpful virtual health assistant that creates structured workout and diet plans for every day of the week. Provide a diet for seven days a week and a workout for the amount of days the user wants. Use the same format everytime"},
     ]
-
+    start=0
     while True:
         # Get user input
-        user_input = input("You: ")
-
+        if start==0:
+          print("Hi I am a virtual health assistant. I can give you advice on your diet or workout routine.")
+          Age=input("Age: ")
+          Gender=input("Gender: ")
+          Goal=input("Goal: ")
+          Height=input("Height: ")
+          Weight=input("Weight: ")
+          DaysPerWeek=input("Days of the week you want to workout: ")
+          foods=input("Favorite foods:")
+          restrictions=input("Dietary restrictions: ")
+          user_input = Age+" "+ Gender+" " +" "+" "+ Goal+" " +Height+" "+Weight+" They want to workout "+ DaysPerWeek+ " Their favorite foods are "+ foods+ "Thier dietary restrictions are "+ restrictions
+          start=1
+        else:
+            user_input=input("Anything else? ") 
+        
+        
         # Breaking condition
         if user_input.lower() in ["exit", "quit", "bye"]:
             print("Goodbye!")
@@ -68,3 +82,4 @@ except openai.error.Timeout as e:
 except Exception as e:
     # Handles all other exceptions
     print(f"An exception has occurred: {e}")
+
