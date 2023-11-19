@@ -11,7 +11,7 @@ try:
         {"role": "system", "content": "You are a helpful virtual health assistant"},
     ]
     labels=["age: ","dietaryRestriction: ","experience: ","fitnessGoal:  ","gender: ","height: ","weight: ","includeSupplements: ","numDays: "]
-    values=["20","Vegetarian","Beginner","Muscle Gain","Male","5 feet 9 inches","155 Pounds","Yes","4"]
+    values=["20","none","Beginner","Muscle Gain","female","5 feet 9 inches","105 Pounds","yes","5"]
     age,dietaryRestriction,experience,fitnessGoal,gender,height,weight,includeSupplements,numDays = values
     user_data = f"This is the profile of a {age} year old {gender} weighing {weight} and standing at {height} who wants fitness goal is {fitnessGoal}. Currently a {experience}, the person has a {dietaryRestriction} dietary restriction. The imdividual has chosen to create a plan for {numDays} per week and has said {includeSupplements} to supplements."
     #setting control flag
@@ -20,7 +20,7 @@ try:
         # Get user input
         if flag==False:
           print("Hi I am a Vivo!, a virtual health assistant. I can provide you with a personalised Workout & Diet Routine.")
-          user_input="Create a stuctured diet & workout plan for the user using the responses provided. Make it extremely personalized and tailored to the number of days per week he provides. Create a day by day plan for both the diet and workout(Base the workout on the fitness goal indicated by the user and make it extremely accurate) which has been provided by the user, and give the same format with the day by day and step by step Workout Routine followed Diet and include supplements in diet if user has said yes. Also provide with a note saying that you should consult a medical professional with the dosage of the supplement if indicated by the user that he wants a supplement. Wish him goodluck at the end and a message saying that hope he achieves the fitness goal which he mentioned. USe the format which I am providing below to base your answer on. Note only use the output format, the content is going to be determined by you \
+          user_input="Create a stuctured diet & workout plan for the user using the responses provided. Make it extremely personalized and tailor the workout schedule to the number of days per week he provides. The diet plan will always contain seven days. Create a day by day plan for both the diet and workout(Base the workout on the fitness goal indicated by the user and make it extremely accurate) which has been provided by the user, and give the same format with the day by day and step by step Workout Routine followed Diet and include supplements in diet if user has said yes. Also provide with a note saying that you should consult a medical professional with the dosage of the supplement if indicated by the user that he wants a supplement. Wish him goodluck at the end and a message saying that hope he achieves the fitness goal which he mentioned. USe the format which I am providing below to base your answer on. Note only use the output format, the content is going to be determined by you \
           \
           **Day-by-Day Workout Routine**: \
             *Day 1 - Chest and Back* \
@@ -63,12 +63,12 @@ try:
             \
             - Breakfast: Oatmeal with chopped fruits \
             - Lunch: Chickpea salad with whole grain bread \
-            - Dinner: Grilled cottage cheese with sautéed vegetables \
+            - Dinner: Grilled tempeh with sautéed vegetables \
             - Snack: Guacamole and carrot sticks \
             \
             *Day 2:* \
             \
-            - Breakfast: Greek yogurt with blueberries \
+            - Breakfast: Greek yogurt with blueberries and granola \
             - Lunch: Lentil soup with brown rice \
             - Dinner: Veggie stir fry with tofu \
             - Snack: Fruit smoothie \
@@ -86,6 +86,27 @@ try:
             - Lunch: Whole grain pasta with mushroom sauce \
             - Dinner: Vegetable curry with basmati rice \
             - Snack: A banana and a spoonful of almond butter \
+            \
+             *Day 5:* \
+            \
+            - Breakfast: Oatmeal with berries and a spoonful of peanut butter \
+            - Lunch: Salad with quinoa, chickpeas, and tahini dressing  \
+            - Dinner: Eggplant parmesan  \
+            - Snack: Vegetable and hummus plate \
+            \
+             *Day 6:* \
+            \
+            - Breakfast: Scrambled eggs with spinach and one slice of whole grain toast\
+            - Lunch: Vegetable and hummus wrap \
+            - Dinner: Black bean burger and sweet potato fries \
+            - Snack: A protein bar \
+            \
+             *Day 7:* \
+            \
+            - Breakfast: Greek yogurt with banana and granola \
+            - Lunch: Sweet potato and black bean burrito bowl\
+            - Dinner: Vegetable curry with basmati rice \
+            - Snack: An apple and a spoonful of peanut butter \
             \
             ***Supplements*** \
             \
