@@ -6,6 +6,7 @@ from app_related import create_account,login,fetch_data,update_data,getAiRespons
 # Create a Flask web application
 app = Flask(__name__)
 CORS(app)
+print(app.config['CORS_HEADERS'])
 
 # Define a route for the home page
 @app.route('/')
