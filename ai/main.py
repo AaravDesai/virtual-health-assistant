@@ -12,7 +12,8 @@ try:
     ]
     labels=["age: ","dietaryRestriction: ","experience: ","fitnessGoal:  ","gender: ","height: ","weight: ","includeSupplements: ","numDays: "]
     values=["20","Vegetarian","Beginner","Muscle Gain","Male","5 feet 9 inches","155 Pounds","Yes","4"]
-    user_data = dict(zip(labels,values))
+    age,dietaryRestriction,experience,fitnessGoal,gender,height,weight,includeSupplements,numDays = values
+    user_data = f"This is the profile of a {age} year old {gender} weighing {weight} and standing at {height} who wants fitness goal is {fitnessGoal}. Currently a {experience}, the person has a {dietaryRestriction} dietary restriction."
     #setting control flag
     flag = False
     while True:
@@ -97,8 +98,7 @@ try:
             ***Note*: Please consult with a healthcare professional to determine the right dosage for your supplements based on your individual conditions and needs. * \
             \
             Now that you're good to go, I wish you the best of luck in your fitness journey! I hope you achieve your goal of gaining muscle mass and improving your overall fitness."
-          for keys in user_data.keys():
-            user_input += (user_data[keys] + " ")
+          user_input += user_data
           flag = True
         else:
             user_input=input("Would you like to add anything, or make any changes? ")
