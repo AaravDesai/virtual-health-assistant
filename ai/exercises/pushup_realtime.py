@@ -11,7 +11,15 @@ mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 landmark_names = [f'x{i}' for i in range(33)] + [f'y{i}' for i in range(33)] + [f'z{i}' for i in range(33)] + [f'v{i}' for i in range(33)]
 
-cap = cv2.VideoCapture('pushup_videos/archedback1.mp4')
+cap = cv2.VideoCapture('pushup_videos/correct1.MOV')
+
+# Get video properties for the output file
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+frame_rate = int(cap.get(cv2.CAP_PROP_FPS))
+
+# Initialize video writer
+out = cv2.VideoWriter('processed_video.mp4', cv2.VideoWriter_fourcc(*'mp4v'), frame_rate, (frame_width, frame_height))
 
 with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
     while cap.isOpened():
@@ -36,12 +44,12 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
             pose_label = best_clf.predict(landmarks_df)[0]
 
             # Text settings
-            font_scale = 1.5  # Increase the font size
-            font = cv2.FONT_HERSHEY_COMPLEX  # Change the font style
+            font_scale = 1.5
+            font = cv2.FONT_HERSHEY_COMPLEX
             text = pose_label
             text_size = cv2.getTextSize(text, font, font_scale, 2)[0]
             text_x = 10
-            text_y = 50  # Adjust the y position to accommodate larger text
+            text_y = 50
             text_w = text_size[0]
             text_h = text_size[1]
 
@@ -53,10 +61,9 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
         else:
             cv2.putText(image, 'No Pose Detected', (10, 50), cv2.FONT_HERSHEY_COMPLEX, 2.0, (0, 0, 255), 2, cv2.LINE_AA)
 
-        cv2.imshow('Raw webcam feed', image)
+        # Write the processed frame to the video
+        out.write(image)
 
-        if cv2.waitKey(10) & 0xFF == ord('q'):
-            break
-
-cap.release()
-cv2.destroyAllWindows()
+    cap.release()
+    out.release()  # Release the video writer
+    cv2.destroyAllWindows()
