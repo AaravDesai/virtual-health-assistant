@@ -114,7 +114,7 @@ try:
         )
         # Get and print the assistant's reply
         assistant_reply = response['choices'][0]['message']['content']
-        print(f"Assistant: {assistant_reply}")
+        print(f"Vivo: {assistant_reply}")
         # Add assistant's reply to conversation
         conversation_history.append({"role": "assistant", "content": assistant_reply})
 except openai.error.APIError as e:
