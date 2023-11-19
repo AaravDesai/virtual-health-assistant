@@ -20,6 +20,7 @@ try:
         if flag==False:
           print("Hi I am a Vivo!, a virtual health assistant. I can provide you with a personalised Workout & Diet Routine.")
           user_input="Create a stuctured diet & workout plan for the user using the responses provided. Make it extremely personalized and tailored to the number of days per week he provides. Create a day by day plan for both the diet and workout(Base the workout on the fitness goal indicated by the user and make it extremely accurate) which has been provided by the user, and give the same format with the day by day and step by step Workout Routine followed Diet and include supplements in diet if user has said yes. Also provide with a note saying that you should consult a medical professional with the dosage of the supplement if indicated by the user that he wants a supplement. Wish him goodluck at the end and a message saying that hope he achieves the fitness goal which he mentioned. USe the format which I am providing below to base your answer on. Note only use the output format, the content is going to be determined by you \
+          \
           **Day-by-Day Workout Routine**: \
             *Day 1 - Chest and Back* \
             \
