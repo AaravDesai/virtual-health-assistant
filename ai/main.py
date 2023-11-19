@@ -13,7 +13,7 @@ try:
     labels=["age: ","dietaryRestriction: ","experience: ","fitnessGoal:  ","gender: ","height: ","weight: ","includeSupplements: ","numDays: "]
     values=["20","Vegetarian","Beginner","Muscle Gain","Male","5 feet 9 inches","155 Pounds","Yes","4"]
     age,dietaryRestriction,experience,fitnessGoal,gender,height,weight,includeSupplements,numDays = values
-    user_data = f"This is the profile of a {age} year old {gender} weighing {weight} and standing at {height} who wants fitness goal is {fitnessGoal}. Currently a {experience}, the person has a {dietaryRestriction} dietary restriction."
+    user_data = f"This is the profile of a {age} year old {gender} weighing {weight} and standing at {height} who wants fitness goal is {fitnessGoal}. Currently a {experience}, the person has a {dietaryRestriction} dietary restriction. The imdividual has chosen to create a plan for {numDays} per week and has said {includeSupplements} to supplements."
     #setting control flag
     flag = False
     while True:
