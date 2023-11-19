@@ -1,34 +1,27 @@
-import { useEffect, useState } from "react";
-import { basic_call } from "../api_call";
+import { useState } from "react";
+
+import Header from "../components/header";
+import General from "./general";
+import FormAnalysis from "./formanalysis";
+
+import "./home.css"
+import "./home2.css"
 
 function Home() {
-    const [userData,setuserData] = useState({})
-
-    useEffect(() => {
-        const fetchUserData = async (cookieValue) => {
-            const config = {
-                method: 'get',
-                url: 'http://localhost:5000/fetchdata',
-                params: {
-                    cookie: cookieValue
-                },
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            }
-            const data = (await basic_call(config)).data
-            setuserData(data)
-        }
-        const cookies = document.cookie.split('; ')
-        const myCookie = cookies.find(cookie => cookie.startsWith('auth='))
-        const cookieValue = myCookie && myCookie.split('=')[1]
-
-        fetchUserData(cookieValue)
-    }, [])
+    const [currentTab, setCurrentTab] = useState(1)
 
     return (
         <div className="Home">
-            home
+            <Header />
+            <div className="home-menubar">
+                <div className={`${currentTab && "home-menubar-activated"}`} onClick={()=>setCurrentTab(1)}>
+                    A
+                </div>
+                <div className={`${!currentTab && "home-menubar-activated"}`} onClick={()=>setCurrentTab(0)}>
+                    B
+                </div>
+            </div>
+            {currentTab ? <General /> : <FormAnalysis />}
         </div>
     );
 }

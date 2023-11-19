@@ -1,0 +1,9 @@
+.home-content2 {
+    width: 92.5%;
+    padding: 2vh 2.5%;
+    padding-left: 5%;
+    height: 81vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

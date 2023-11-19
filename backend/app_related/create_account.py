@@ -1,5 +1,4 @@
 from db import db
-import sys
 from flask import jsonify
 
 def create_account_api(params):
@@ -12,13 +11,14 @@ def create_account_api(params):
         "password":password,
         "data":{
             "gender":"",
-            "height":0,
+            "height":"",
             "weight":0,
             "age":0,
-            "goals":[
-                
-            ],
+            "fitnessGoal":"",
             "experience":"",
+            "dietaryRestriction":"",
+            "includeSupplements":True,
+            "numDays":0,
             "needsAction":True 
         }
     }
