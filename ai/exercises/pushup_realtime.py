@@ -11,7 +11,7 @@ mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 landmark_names = [f'x{i}' for i in range(33)] + [f'y{i}' for i in range(33)] + [f'z{i}' for i in range(33)] + [f'v{i}' for i in range(33)]
 
-cap = cv2.VideoCapture('pushup_videos/correct1.MOV')
+cap = cv2.VideoCapture('pushup_videos/correct2.MOV')
 
 # Get video properties for the output file
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
