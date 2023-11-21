@@ -7,3 +7,5 @@ hackenv
 #videos folder
 pushup_videos
 squats_videos
+
+.env
