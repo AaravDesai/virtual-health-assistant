@@ -1,10 +1,15 @@
 #Importing required libraries
 import openai
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 # Set OpenAI API configuration
-openai.api_type = "azure"
-openai.api_key = '9fd2d1a84636415685bcf7dc451040fb'
-openai.api_base = 'https://api.umgpt.umich.edu/azure-openai-api/ptu'
-openai.api_version = '2023-03-15-preview'
+openai.api_type = os.getenv('OPENAI_API_TYPE')
+openai.api_key = os.getenv('OPENAI_API_KEY')
+openai.api_base = os.getenv('OPENAI_API_BASE')
+openai.api_version = os.getenv('OPENAI_API_VERSION')
 try:
     # Initialize conversation history
     conversation_history = [
